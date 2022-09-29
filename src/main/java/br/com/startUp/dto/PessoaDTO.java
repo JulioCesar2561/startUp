@@ -9,7 +9,7 @@ public class PessoaDTO {
     private String nome;
     private String email;
     private String telefone;
-    private ProfileDTO profileDTO;
+     private ProfileDTO profileDTO;
 
     
     public Integer getId() {
