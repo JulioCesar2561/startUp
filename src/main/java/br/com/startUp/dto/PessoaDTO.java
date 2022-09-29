@@ -2,22 +2,13 @@ package br.com.startUp.dto;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "tb_pessoa")
-public class PessoaDTO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
-    @Column(name = "name")
-    private String nome;
-    @Column(unique = true, name = "email")
-    private String email;
-    @Column(name = "telefone")
-    private String telefone;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true, name = "id_profile")
+public class PessoaDTO {
+
+    private Integer id;
+    private String nome;
+    private String email;
+    private String telefone;
     private ProfileDTO profileDTO;
 
     
