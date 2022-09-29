@@ -1,6 +1,6 @@
-package com.br.curso.startup.repository;
+package br.com.startUp.repository;
 
-import com.br.curso.startup.dto.PessoaDTO;
+import br.com.startUp.dto.PessoaDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

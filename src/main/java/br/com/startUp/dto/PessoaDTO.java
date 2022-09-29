@@ -1,4 +1,4 @@
-package com.br.curso.startup.dto;
+package br.com.startUp.dto;
 
 import javax.persistence.*;
 

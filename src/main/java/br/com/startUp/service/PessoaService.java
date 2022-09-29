@@ -1,7 +1,7 @@
-package com.br.curso.startup.service;
+package br.com.startUp.service;
 
-import com.br.curso.startup.dto.PessoaDTO;
-import com.br.curso.startup.repository.PessoaRepository;
+import br.com.startUp.dto.PessoaDTO;
+import br.com.startUp.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

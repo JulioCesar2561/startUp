@@ -1,19 +1,21 @@
-package br.com.startUp.model;
+package br.com.startUp.dto;
 
-import javax.persistence.*;
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "profile")
-public class Profile {
-
+@Table(name = "tb_profile")
+public class ProfileDTO {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "telefone")
-    private String telefone;
-    @Column(name = "email")
-    private String email;
     @Column(name = "youtube_channel")
     private String youtubeChannel;
     @Column(name = "facebook")
@@ -21,20 +23,8 @@ public class Profile {
     @Column(name = "linkedin")
     private String linkedin;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pessa_id")
-    private Pessoa pessoa;
+    public ProfileDTO(){
 
-    public Profile(){
-
-    }
-
-    public Profile(String telefone, String email, String youtubeChannel, String facebook, String linkedin) {
-        this.telefone = telefone;
-        this.email = email;
-        this.youtubeChannel = youtubeChannel;
-        this.facebook = facebook;
-        this.linkedin = linkedin;
     }
 
     public Integer getId() {
@@ -43,22 +33,6 @@ public class Profile {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getYoutubeChannel() {
@@ -84,4 +58,12 @@ public class Profile {
     public void setLinkedin(String linkedin) {
         this.linkedin = linkedin;
     }
+
+    public ProfileDTO(String youtubeChannel, String facebook, String linkedin) {
+        this.youtubeChannel = youtubeChannel;
+        this.facebook = facebook;
+        this.linkedin = linkedin;
+    }
+
+    
 }

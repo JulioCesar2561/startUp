@@ -1,7 +1,8 @@
-package com.br.curso.startup.controller;
+package br.com.startUp.controller;
 
 import java.util.List;
 
+import br.com.startUp.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.curso.startup.dto.PessoaDTO;
-import com.br.curso.startup.service.PessoaService;
+import br.com.startUp.dto.PessoaDTO;
 
 @RestController
 @RequestMapping(value = "/pessoa")
