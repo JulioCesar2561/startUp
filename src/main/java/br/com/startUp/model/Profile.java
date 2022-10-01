@@ -1,7 +1,6 @@
 package br.com.startUp.model;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "profile")
@@ -17,14 +16,6 @@ public class Profile {
     private String facebook;
     @Column(name = "linkedin")
     private String linkedin;
-    public Profile() {
-
-    }
-    public Profile(String youtubeChannel, String facebook, String linkedin) {
-        this.youtubeChannel = youtubeChannel;
-        this.facebook = facebook;
-        this.linkedin = linkedin;
-    }
 
     public Integer getId() {
         return id;
@@ -56,18 +47,5 @@ public class Profile {
 
     public void setLinkedin(String linkedin) {
         this.linkedin = linkedin;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Profile profile = (Profile) o;
-        return Objects.equals(id, profile.id) && Objects.equals(youtubeChannel, profile.youtubeChannel) && Objects.equals(facebook, profile.facebook) && Objects.equals(linkedin, profile.linkedin);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, youtubeChannel, facebook, linkedin);
     }
 }

@@ -2,14 +2,13 @@ package br.com.startUp.dto;
 
 import javax.persistence.*;
 
-
 public class PessoaDTO {
 
     private Integer id;
     private String nome;
     private String email;
     private String telefone;
-     private ProfileDTO profileDTO;
+    private ProfileDTO profileDTO;
 
     
     public Integer getId() {

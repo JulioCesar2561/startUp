@@ -3,7 +3,6 @@ package br.com.startUp.model;
 import org.springframework.context.annotation.Profile;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "pessoa")
@@ -19,20 +18,9 @@ public class Pessoa {
     @Column(name = "telefone")
     private String telefone;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true, name = "id_profile")
-    private Profile profile;
-
-    public Pessoa(){
-
-    }
-
-    public Pessoa(String nome, String email, String telefone, Profile profile) {
-        this.nome = nome;
-        this.email = email;
-        this.telefone = telefone;
-        this.profile = profile;
-    }
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(unique = true, name = "id_profile")
+//    private Profile profile;
 
     public Integer getId() {
         return id;
@@ -66,24 +54,12 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
-    public Profile getProfile() {
-        return profile;
-    }
+//    public Profile getProfile() {
+//        return profile;
+//    }
+//
+//    public void setProfile(Profile profile) {
+//        this.profile = profile;
+//    }
 
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(id, pessoa.id) && Objects.equals(nome, pessoa.nome) && Objects.equals(email, pessoa.email) && Objects.equals(telefone, pessoa.telefone) && Objects.equals(profile, pessoa.profile);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nome, email, telefone, profile);
-    }
 }
